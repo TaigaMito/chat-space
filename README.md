@@ -25,7 +25,7 @@
 - has_many :users
 
 
-## postsテーブル
+## messageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -36,6 +36,19 @@
 ### アソシエーション
 
 - belongs_to :users
+
+## groups_usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+### アソシエーション
+
+- belongs_to :user
+- belongs_to :group
+
 
 
 
