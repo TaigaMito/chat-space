@@ -4,9 +4,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false, foreign_key: true|
-|password|string|null: false, foreign_key: true|
-|nickname|string|null: false, foreign_key: true|
+|email|string|null: false, foreign_key: true, unique_key: true|
+|password|string|null: false, foreign_key: true, unique_key: true|
+|nickname|string|null: false, foreign_key: true, unique_key: true|
 
 ### アソシエーション
 
@@ -18,8 +18,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
-|groupname|string|null :false, foreign_key: true|
+|groupname|string|null :false, foreign_key: true, unique_key: true|
 
 ###　アソシエーション
 
