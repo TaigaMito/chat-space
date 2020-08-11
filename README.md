@@ -10,9 +10,9 @@
 
 ### アソシエーション
 
-- has_many :messages, through: :groups_users
+- has_many :messages
 - has_many :groups_users
-- belongs_to :group
+- has_many :groups, through: :groups_users
 
 ## groupsテーブル
 
@@ -35,6 +35,7 @@
 |image|text||
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### アソシエーション
 
