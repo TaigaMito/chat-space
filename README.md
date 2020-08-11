@@ -11,6 +11,7 @@
 ### アソシエーション
 
 - has_many :messages, through: :groups_users
+- has_many :groups_users
 - belongs_to :group
 
 ## groupsテーブル
@@ -22,7 +23,8 @@
 
 ###　アソシエーション
 
-- has_many :users, through: :users
+- has_many :users, through: :groups_users
+- has_many :groups_users
 - has_many :messages
 
 
