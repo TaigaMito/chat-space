@@ -11,8 +11,32 @@
 .side-bar__user-name{
   height: 100px;
   width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #253141;
+  
 }
+
+.top-items{
+  height: 20px;
+  width: 260px;
+  background-color: red;
+  display: flex;
+}
+
+.top-items__name{
+  height: 20px;
+  width: 200px;
+  background-color: skyblue;
+}
+
+.top-items__icons{
+  height: 20px;
+  width: 60px;
+  background-color: green;
+}
+
 
 .side-bar__group-list{
   height: calc(100vh - 100px);
