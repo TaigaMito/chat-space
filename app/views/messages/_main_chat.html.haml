@@ -1,13 +1,35 @@
 .chat-main
   .chat-main__header
-    .chat-main__group-info
-      .chat-main__group-info-title
+    .chat-main__header--group-info
+      .chat-main__header--group-info-title
         test
-      .chat-main__group-info-member
+      .chat-main__header--group-info-member
         member:TaigaMito
-    .chat-main__group-info-btn
+    .chat-main__header--group-info-btn
       = link_to "#", class: "icons__btn__edit" do
         Edit
-  .chat-main__message-list
-  .chat-main__message-form
-    
+  .chat-main__message
+    .chat-main__message-list
+      .chat-main__message-list__name
+        TaigaMito
+      .chat-main__message-list__date
+        2020年08月16日 18時55分
+    .chat-main__message-list__message
+      おはよう
+    .chat-main__message-list
+      .chat-main__message-list__name
+        TaigaMito
+      .chat-main__message-list__date
+        2020年08月16日 18時55分
+    .chat-main__message-list__message
+      こんにちは
+  .chat-main__footer
+    .chat-main__footer__message-form
+      .chat-main__footer__inputText{"placeholder": "type a message", "type": "text"}
+        type a message
+        .chat-main__footer__image-box
+          %label{class: "input-box__image"}
+            = icon('fas', 'image')
+            %input.hidden{type: "file"}
+      %input.chat-main__footer__submitbtn{"name": "commit", "type": "submit", "value": "Send"}
+      
