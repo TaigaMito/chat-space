@@ -2,34 +2,21 @@
   .chat-main__header
     .chat-main__header__group-info
       .chat-main__header__group-info-title
-        test
+        = @group.name
       .chat-main__header__group-info-member
-        member:TaigaMito
+        - @group.users.each do |user|
+          = user.name
     .chat-main__header__group-info-btn
-      = link_to "#", class: "icons__btn__edit" do
-        Edit
-  .chat-main__message
-    .chat-main__message-list
-      .chat-main__message-list__name
-        TaigaMito
-      .chat-main__message-list__date
-        2020年08月16日 18時55分
-    .chat-main__message-list__message
-      おはよう
-    .chat-main__message-list
-      .chat-main__message-list__name
-        TaigaMito
-      .chat-main__message-list__date
-        2020年08月16日 18時55分
-    .chat-main__message-list__message
-      こんにちは
+      = link_to edit_group_path(current_user), class: 'text-deco' do
+        .icons__btn__edit
+          Edit
+  .MessageField
+    = render @messages
   .chat-main__footer
-    .chat-main__footer__message-form
-      .chat-main__footer__inputText{"placeholder": "type a message", "type": "text"}
-        type a message
-        .chat-main__footer__image-box
-          %label{class: "input-box__image"}
-            = icon('fas', 'image')
-            %input.hidden{type: "file"}
-      %input.chat-main__footer__submitbtn{"name": "commit", "type": "submit", "value": "Send"}
-      
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+        = f.submit 'Send', class: 'Form__submit'
