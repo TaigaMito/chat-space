@@ -7,7 +7,7 @@
         - @group.users.each do |user|
           = user.name
     .chat-main__header__group-info-btn
-      = link_to edit_group_path(current_user), class: 'text-deco' do
+      = link_to edit_group_path(@group), class: 'text-deco' do
         .icons__btn__edit
           Edit
   .MessageField
